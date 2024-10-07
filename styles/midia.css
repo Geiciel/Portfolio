@@ -1,0 +1,91 @@
+@media screen and (min-width: 390px) and (max-width: 480px) {
+    header {
+        height: 40vh;
+        padding: 10dvh 0px;
+    }
+
+    .txt-int > p {
+        font-size: .8rem;
+    }
+
+    .txt-int > h1 {
+        font-size: 2.3rem;
+    }
+
+    .title-proj > p {
+        font-size: .75rem;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    header {
+        height: 70vh;
+        padding: 20dvh 0px;
+    }
+
+    .txt-int {
+        border-left: solid 7px #2A9300;
+    }
+
+    .txt-int > p {
+        font-size: 1rem;
+    }
+    
+    .txt-int > h1 {
+        font-size: 3.8rem;
+    }
+
+    .title-proj > p {
+        font-size: .9rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    header {
+        height: 99dvh;
+        padding: 20dvh 0px;
+    }
+
+    .txt-int {
+        border-left: solid 7px #2A9300;
+    }
+
+    .txt-int > p {
+        font-size: 1.2rem;
+    }
+    
+    .txt-int > h1 {
+        font-size: 5rem;
+    }
+
+    .title-proj > p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    header {
+        height: 99dvh;
+        padding: 25dvh 0px;
+    }
+
+    .txt-int {
+        border-left: solid 7px #2A9300;
+    }
+
+    .txt-int > p {
+        font-size: 1.2rem;
+    }
+    
+    .txt-int > h1 {
+        font-size: 7rem;
+    }
+
+    .title-proj > p {
+        font-size: 1rem;
+    }
+
+}
