@@ -128,6 +128,63 @@
             </div>
             <div class="direitos"><p>© 2024 Geiciel Marques. Todos os direitos reservados.</p></div>
         </footer>
+        <script>
+            // Função para aplicar o comportamento apenas em telas menores que 768px
+            function applyMobileBehavior() {
+                // Verifica se a largura da tela é menor que 768px
+                if (window.innerWidth < 768) {
+                    // Seleciona todos os elementos com a classe 'site'
+                    const sites = document.querySelectorAll('.site');
+
+                    // Variável para rastrear o elemento ativo (clicado)
+                    let activeSite = null;
+
+                    // Adiciona um evento de clique a cada elemento
+                    sites.forEach((site) => {
+                        site.addEventListener('click', (e) => {
+                            e.stopPropagation(); // Evita que o clique no elemento propague para o documento
+
+                            // Se houver um site ativo e for diferente do atual, reseta o estilo
+                            if (activeSite && activeSite !== site) {
+                                resetStyles(activeSite);
+                            }
+
+                            // Aplica os estilos ao site clicado
+                            site.style.height = '390px';
+                            site.style.transform = 'scale(1.04)';
+                            site.style.transition = '.9s';
+                            site.style.marginBottom = '10px';
+
+                            // Define o site atual como ativo
+                            activeSite = site;
+                        });
+                    });
+
+                    // Adiciona um evento de clique no documento para detectar cliques fora dos sites
+                    document.addEventListener('click', () => {
+                        if (activeSite) {
+                            resetStyles(activeSite); // Reseta o estilo do site ativo
+                            activeSite = null; // Limpa o site ativo
+                        }
+                    });
+
+                    // Função para resetar os estilos de um site
+                    function resetStyles(site) {
+                        site.style.height = '';
+                        site.style.transform = '';
+                        site.style.transition = '';
+                        site.style.marginBottom = '';
+                    }
+                }
+            }
+
+            // Chama a função ao carregar a página
+            applyMobileBehavior();
+
+            // Também chama a função quando a janela é redimensionada
+            window.addEventListener('resize', applyMobileBehavior);
+
+        </script>
     </main>
 </body>
 </html>

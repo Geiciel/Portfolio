@@ -6,7 +6,7 @@
 
 body {
     height: 100vh;
-    background-color: #0B0B0B;
+    background-color: #161616;
     font-family: "Roboto", sans-serif;
 }
 
@@ -109,6 +109,7 @@ header {
     transition: .6s;
     margin-bottom: 50px;
     background-color: #171717;
+    box-shadow: 5px 5px 20px #00000088;
 }
 
 .site:hover {
