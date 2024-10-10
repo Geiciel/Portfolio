@@ -39,6 +39,14 @@
     .title-proj > p {
         font-size: .9rem;
     }
+    
+    .sobre-me h2 {
+        font-size: 2.2rem;
+    }
+
+    .sobre-me p {
+        font-size: 1.1rem;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -62,6 +70,14 @@
 
     .title-proj > p {
         font-size: 1rem;
+    }
+
+    .sobre-me h2 {
+        font-size: 2.5rem;
+    }
+
+    .sobre-me p {
+        font-size: 1.2rem;
     }
 }
 
@@ -88,4 +104,11 @@
         font-size: 1rem;
     }
 
+    .sobre-me h2 {
+        font-size: 2.5rem;
+    }
+
+    .sobre-me p {
+        font-size: 1.2rem;
+    }
 }
