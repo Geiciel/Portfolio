@@ -96,7 +96,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 20px;
+    column-gap: 30px;
     padding-top: 20px;
     max-width: 1260px;
     margin: auto;
@@ -107,7 +107,7 @@ header {
     height: 350px;
     width: 300px;
     transition: .6s;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     background-color: #171717;
     box-shadow: 5px 5px 20px #00000088;
 }
@@ -116,7 +116,7 @@ header {
     height: 390px;
     transform: scale(1.04);
     transition: .9s;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -166,6 +166,17 @@ header {
 .site-int p > a:hover {
     text-decoration: underline;
     color: #2A9300;
+}
+
+.tectra {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+.tectra p {
+    font-size: .9rem;
+    color: #00FFFF;
 }
 
 /* Footer */
