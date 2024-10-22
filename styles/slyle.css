@@ -280,10 +280,9 @@ form button {
 }
 
 form button:hover {
-    background-color: #3fb400;
+    background-color: #5AFF00;
     color: #000;
     transform: scale(1.06);
     transition: .9s;
     cursor: pointer;
-    border: solid 2px #5AFF00;
 }
