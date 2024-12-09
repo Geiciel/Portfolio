@@ -50,11 +50,17 @@ header {
 
 /* section */
 
+.sobre-me-ex {
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
 .sobre-me {
-    background-color: black;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-align: center;
+    background-color: #171717;
+    box-shadow: 2px 2px 40px #0000006e;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 700px;
     padding: 10px;
 }
 
@@ -67,8 +73,6 @@ header {
 .sobre-me > p {
     color: white;
     font-weight: 300;
-    max-width: 700px;
-    margin: auto;
 }
 
 .title-proj {
@@ -87,11 +91,6 @@ header {
     margin-bottom: 2px;
 }
 
-.title-proj > p {
-    color: #00FFFF;
-    font-size: .6rem;
-}
-
 .sites {
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +103,7 @@ header {
 
 .site {
     position: relative;
-    height: 350px;
+    height: 349px;
     width: 300px;
     transition: .6s;
     margin-bottom: 60px;
@@ -176,7 +175,7 @@ header {
 
 .tectra p {
     font-size: .9rem;
-    color: #00FFFF;
+    color: #32af00;
 }
 
 /* Footer */
