@@ -138,6 +138,12 @@ header {
     cursor: pointer;
 }
 
+
+.site button:hover {
+    background-color: #43be00;
+    transition: 0.2s;
+}
+
 .site-int {
     background-color: #171717;
     width: 300px;
