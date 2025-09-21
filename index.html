@@ -145,14 +145,17 @@
                     </ul>
                 </div>
                 <div class="form">
-                    <form action="">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="a5d97c90-20c0-49da-a297-33ed4b79768c" />
+                        <input type="hidden" name="subject" value="Web3Forms - Fala meu parceiro, chegou nova mensagem para você!" />
+                        <input type="hidden" name="from_name" value="Portifolio"/>
                         <label for="text">Nome</label>
                         <input type="text" name="txt" id="text" placeholder="Seu nome" required>
 
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
 
-                        <textarea name="textar" id="textar" placeholder="Sua mensagem" required>Desculpa, mas o formulário ainda não esta em funcionamento</textarea>
+                        <textarea name="textar" id="textar" placeholder="Sua mensagem" required></textarea>
 
                         <button type="submit">Enviar <i class="bi bi-send"></i></button>
                     </form>
