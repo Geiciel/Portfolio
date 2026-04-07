@@ -33,7 +33,7 @@
             <div class="sobre-me-ex">
                 <div class="sobre-me">
                     <h2>Quem sou eu?</h2>
-                    <p>Sou um jovem de 18 anos apaixonado pelo mundo da tecnologia, atualmente focado em desenvolvimento web, com ênfase na área de front-end. Tenho um forte compromisso com meus deveres e busco sempre realizar meus trabalhos com o máximo de precisão e excelência, priorizando a qualidade e a satisfação das pessoas para quem desenvolvo. Estou sempre em busca de aperfeiçoamento, aprendendo e me dedicando para ser cada vez melhor no que faço.</p>
+                    <p>Sou um jovem de <span id="idade"></span> anos apaixonado pelo mundo da tecnologia, atualmente focado em desenvolvimento web, com ênfase na área de front-end. Tenho um forte compromisso com meus deveres e busco sempre realizar meus trabalhos com o máximo de precisão e excelência, priorizando a qualidade e a satisfação das pessoas para quem desenvolvo. Estou sempre em busca de aperfeiçoamento, aprendendo e me dedicando para ser cada vez melhor no que faço.</p>
                 </div><!--sobre-me-->
             </div>
             <div class="projet">
@@ -164,46 +164,57 @@
             <div class="direitos"><p>© 2024 Geiciel Marques. Todos os direitos reservados.</p></div>
         </footer>
         <script>
-            // Função para aplicar o comportamento apenas em telas menores que 768px
+            function idade() {
+                let idadeFinal = document.getElementById('idade')
+
+                let hoje = new Date()
+                let nacimento = new Date(2007, 2, 30)
+                let idade = hoje.getFullYear() - nacimento.getFullYear()
+                
+                if (hoje.getMonth() >= nacimento.getMonth()){
+                    if (hoje.getDate() >= nacimento.getDate() || hoje.getMonth() > nacimento.getMonth()){
+                        idadeFinal.innerText = idade
+                    } else {
+                        idade--
+                        idadeFinal.innerText = idade
+                    }
+                } else {
+                    idade--
+                    idadeFinal.innerText = idade
+                }
+            }
+            idade()
+            
             function applyMobileBehavior() {
-                // Verifica se a largura da tela é menor que 768px
                 if (window.innerWidth < 768) {
-                    // Seleciona todos os elementos com a classe 'site'
                     const sites = document.querySelectorAll('.site');
 
-                    // Variável para rastrear o elemento ativo (clicado)
                     let activeSite = null;
 
-                    // Adiciona um evento de clique a cada elemento
                     sites.forEach((site) => {
                         site.addEventListener('click', (e) => {
-                            e.stopPropagation(); // Evita que o clique no elemento propague para o documento
+                            e.stopPropagation(); 
 
-                            // Se houver um site ativo e for diferente do atual, reseta o estilo
                             if (activeSite && activeSite !== site) {
                                 resetStyles(activeSite);
                             }
 
-                            // Aplica os estilos ao site clicado
                             site.style.height = '390px';
                             site.style.transform = 'scale(1.04)';
                             site.style.transition = '.9s';
                             site.style.marginBottom = '20px';
 
-                            // Define o site atual como ativo
                             activeSite = site;
                         });
                     });
 
-                    // Adiciona um evento de clique no documento para detectar cliques fora dos sites
                     document.addEventListener('click', () => {
                         if (activeSite) {
-                            resetStyles(activeSite); // Reseta o estilo do site ativo
-                            activeSite = null; // Limpa o site ativo
+                            resetStyles(activeSite);
+                            activeSite = null;
                         }
                     });
 
-                    // Função para resetar os estilos de um site
                     function resetStyles(site) {
                         site.style.height = '';
                         site.style.transform = '';
@@ -213,10 +224,8 @@
                 }
             }
 
-            // Chama a função ao carregar a página
             applyMobileBehavior();
 
-            // Também chama a função quando a janela é redimensionada
             window.addEventListener('resize', applyMobileBehavior);
 
         </script>
