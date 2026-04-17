@@ -145,10 +145,7 @@
                     </ul>
                 </div>
                 <div class="form">
-                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="a5d97c90-20c0-49da-a297-33ed4b79768c" />
-                        <input type="hidden" name="subject" value="Web3Forms - Fala meu parceiro, chegou nova mensagem para você!" />
-                        <input type="hidden" name="from_name" value="Portifolio"/>
+                    <form class="contact-form" method="POST">
                         <label for="text">Nome</label>
                         <input type="text" name="txt" id="text" placeholder="Seu nome" required>
 
@@ -185,48 +182,33 @@
             }
             idade()
             
-            function applyMobileBehavior() {
-                if (window.innerWidth < 768) {
-                    const sites = document.querySelectorAll('.site');
+            const form = document.querySelector('.contact-form');
 
-                    let activeSite = null;
+            form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // impede o reload da página
 
-                    sites.forEach((site) => {
-                        site.addEventListener('click', (e) => {
-                            e.stopPropagation(); 
+            const formData = new FormData(form);
 
-                            if (activeSite && activeSite !== site) {
-                                resetStyles(activeSite);
-                            }
+            try {
+                const res = await fetch('https://geicielmarques.app.n8n.cloud/webhook-test/emal-whats', {
+                method: 'POST',
+                body: formData
+                });
 
-                            site.style.height = '390px';
-                            site.style.transform = 'scale(1.04)';
-                            site.style.transition = '.9s';
-                            site.style.marginBottom = '20px';
+                const data = await res.json();
 
-                            activeSite = site;
-                        });
-                    });
-
-                    document.addEventListener('click', () => {
-                        if (activeSite) {
-                            resetStyles(activeSite);
-                            activeSite = null;
-                        }
-                    });
-
-                    function resetStyles(site) {
-                        site.style.height = '';
-                        site.style.transform = '';
-                        site.style.transition = '';
-                        site.style.marginBottom = '';
-                    }
+                if (res.ok) {
+                alert('Mensagem enviada com sucesso!');
+                form.reset();
+                } else {
+                alert('Erro ao enviar: ' + data.message);
                 }
+
+            } catch (error) {
+                console.log(error);
+                alert('Erro de conexão');
             }
-
-            applyMobileBehavior();
-
-            window.addEventListener('resize', applyMobileBehavior);
+            });
 
         </script>
     </main>
